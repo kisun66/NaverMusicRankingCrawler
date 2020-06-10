@@ -4,7 +4,8 @@ import sys
 import json
 from bs4 import BeautifulSoup
 
-Base_Dir = os.path.dirname('./NaverMusicCrawler/__File__/')
+BASE_DIR = os.path.dirname('__File__')
+print(BASE_DIR)
 
 print("Start Crawling")
 req = requests.get('https://music.naver.com/listen/top100.nhn?domain=TOTAL')
@@ -22,7 +23,7 @@ for i in range(len(datas)):
     print(str(rank) + ". " + name)
     data[rank] = name
 
-with open(os.path.join(Base_Dir, 'musicRank.json'), 'w+',encoding='utf-8') as json_file:
+with open(os.path.join(BASE_DIR, 'musicRank.json'), 'w+',encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
     
 print("Crawling Complete")
