@@ -5,7 +5,7 @@ name: Music Crawler
 
 on:
   schedule:
-    - cron:  '*/10 * * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정
+    - cron:  '*/60 * * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정
 
 jobs:
   build:
@@ -38,4 +38,5 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'master'
+        github_token: $
